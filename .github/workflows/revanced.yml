@@ -33,5 +33,5 @@ jobs:
           title: "ReVanced ${{ env.date_now }}"
           prerelease: false
           files: |
-            build/revanced-nonroot-signed.apk
+            build/revanced-nonroot.apk
             vanced-microG.apk
