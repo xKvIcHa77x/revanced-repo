@@ -24,9 +24,6 @@ jobs:
               
       - name: Set current date as env variable
         run: echo "date_now=$(date +'%Y-%m-%d')" >> $GITHUB_ENV && echo "date_now_nodashes=$(date +'%Y%m%d')" >> $GITHUB_ENV 
-          
-      - name: Generate SHA256 checksums for the signed APK file
-        run: ./scripts/sha256gen.sh -r
       
       - uses: marvinpinto/action-automatic-releases@latest
         name: Release ReVanced
@@ -36,6 +33,5 @@ jobs:
           title: "ReVanced ${{ env.date_now }}"
           prerelease: false
           files: |
-            build/SHA-256-yt.txt
             build/revanced-nonroot-signed.apk
             vanced-microG.apk
